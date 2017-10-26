@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkpoint 26/10/17</title>
+</head>
+<body>
+
+	<h1 id='head'>DOM Query + Loop</h1>
+
+	<p id='lorem1' class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia optio sint exercitationem veniam, odit praesentium quidem amet tempora minima iusto! Earum praesentium facilis aliquid, dolor quas sint perspiciatis quidem exercitationem.</p>
+	
+	<p id='lorem2' class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis, eius, blanditiis ea saepe consequatur sint aliquid facilis laboriosam repudiandae consectetur, libero beatae quis minima impedit ut aspernatur animi! Harum.</p>
+	
+	<p id='lorem3' class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis officia quam, dolor, dolorem, distinctio quisquam similique ducimus repellat minus laudantium obcaecati hic! Impedit inventore magni, numquam, aut optio obcaecati vero.</p>
+	
+<script>
+	
+	var all = document.getElementById('lorem1');
+
+	for (var i = 0, max = all.length; i < max; i++){
+		console.log(all);
+		all[i].style.color = 'pink';
+	}
+
+</script>
+
+
+</body>
+</html>
