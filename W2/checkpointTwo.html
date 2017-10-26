@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkpoint 18/10/17</title>
+</head>
+<body>
+	
+	<p>write strawberry, orange, grapes, kiwi, banana or mango in the input field and click the button.</p>
+	<p>the switch statement will execute a block of code based on your input.</p>
+
+	<input id='myInput' type="text">
+
+	<button onclick='myFunction()'>try it</button>
+
+	<p id='demo'></p>
+
+	<script>
+		function myFunction(){
+			
+			// var text;
+			var fruits = document.getElementById('myInput').value;
+
+			switch(fruits) {
+				case 'strawberry':
+					text = 'it is red'; break;
+				case 'orange':
+					text = 'it is orange'; break;
+				case 'grapes':
+					text = 'it is violet'; break;
+				case 'kiwi':
+					text = 'it is weird'; break;
+				case 'banana':
+					text = 'it is yellow'; break;
+				case 'mango':
+					text = 'my fav'; break;
+				default:
+					text = 'idk that fruit....';		
+			}
+			
+			document.getElementById('demo').innerHTML = text;
+			console.log(myFunction);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function</title>
+</head>
+<body>
+	<h1>HELLO</h1>
+<script>
+	//function declaration
+	function myFunction(){
+		var person = {
+    	firstName: 'Duke',
+    	lastName: 'Apelinga',
+    	age: 23,
+    	};
+
+    	delete person.age;
+    	console.log(person);
+    }
+
+    //function expression
+    var myFunctionAdding = function(parameterA, parameterB){
+    	// console.log(parameterA + parameterB);
+    	console.log('parameterA');
+    	return parameterA + parameterB;
+    }
+    
+    // myFunction();
+    // console.log(myFunctionAdding(5, 5));
+
+    function calculateArea(width, height) {
+    	var area = width * height;
+    	return area;
+    }
+
+    var wallOne = calculateArea(3, 5);
+
+    // console.log(wallOne);
+    // console.log(wallOne = calculateArea(3, 5));
+    // console.log(wallTwo = calculateArea(8, 5));
+
+    // Excercise
+    // var fruits = {
+    // 	mango: 10,
+    // 	apple: 5,
+    // 	potato: 20,
+    // 	kiwi: 15,
+    // 	orange: 12
+    // }
+
+    // function calcutionQuatity(a, b, c, d, e) {
+    // 	var quantity = a + b + c + d;
+    // 	return quantity;
+    // }
+
+    // var amount = calcutionQuatity(fruits.mango, fruits.apple, fruits.potato, fruits.kiwi);
+
+    // console.log(amount);
+
+    //self invoking functions
+    //set the content into private
+    //iife
+    (function(){
+        // alert('eh!');
+    })();
+
+    //exercise
+    (function(){
+        
+          var fruits = {
+            mango: 10,
+            apple: 5,
+            potato: 20,
+            kiwi: 15,
+            orange: 12
+        }
+        
+        function myFunction(){
+            var configObj = {
+                option1: 123,
+                option2: 456
+            }; 
+            return configObj.option1
+        }
+        
+        // console.log(myFunction());
+
+        var myFunctionAdding = function(parameterA, parameterB){
+            // console.log(parameterA + parameterB);
+            // console.log('parameterA');
+            return parameterA + parameterB;
+        }
+        
+        // console.log(myFunctionAdding(5, 5));
+
+        function calcutionQuatity(a, b, c, d, e) {
+            var quantity = a + b + c + d;
+            return quantity;
+        }
+
+        var amount = calcutionQuatity(fruits.mango, fruits.apple, fruits.potato, fruits.kiwi);
+
+        // console.log(amount);
+
+    })();
+
+    
+</script>
+</body>
+</html>

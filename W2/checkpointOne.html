@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkpoint 17/10/17</title>
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Questrial" rel="stylesheet">
+	
+	<style>
+	
+	#info {
+		padding-left: 20px;
+		text-decoration: none;
+	}
+
+	#title {
+		font-size: 2em;
+		font-family: 'Abril Fatface', cursive;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		/*color: #00BCD4;*/
+	}
+
+	#content {
+		font-family: 'Questrial', san serifs;	
+		letter-spacing: 1px;
+		padding-left: 30px;
+	}
+
+	</style>
+</head>
+<body>
+	
+	<div id='info'>
+		<h1 id='title'>personal information</h1>
+		<ul id='content'>
+			<li id='name'></li>
+			<li id='age'></li>
+			<li id='gender'></li>
+			<li id='height'></li>
+			<li id='location'></li>
+		</ul>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+
+		var myInfo = {
+			firstName: 'Duke',
+			lastName: 'Apelinga',
+			age: 23,
+			location: {
+				home: 'Porirua',
+				school: 'Wellington'
+			},
+			gender: 'Male',
+			height: 175,
+			font: 'pink',	
+		};
+
+		console.log(myInfo);
+
+        function myFunction(a, b){
+
+			var elName = document.getElementById('name');
+			elName.textContent = 'Name: ' + myInfo.firstName + ' ' + myInfo.lastName;
+	        var add = a + ' ' + b;
+	        return add;
+        }
+
+        var complete = myFunction(myInfo.firstName, myInfo.lastName);
+
+        console.log(complete);
+
+        function myFunction1(){
+        
+	        var elAge = document.getElementById('age'); 
+	        elAge.textContent = 'Age: ' + myInfo.age;
+
+	        var elGender = document.getElementById('gender');
+	        elGender.textContent = 'Gender:  ' + myInfo.gender;
+        
+        }
+
+        function myFunction2(){
+
+	        var elHeight = document.getElementById('height');
+	        elHeight.textContent = 'Height: ' + myInfo.height + 'cm'; 
+	        
+	        var elLocation = document.getElementById('location');
+	        elLocation.textContent = 'Location: ' + myInfo.location.school;
+
+	        var fontColor = $('#title').css('color', myInfo.font);
+        
+        }
+
+        myFunction1();
+        myFunction2();
+
+	</script>
+</body>
+</html>

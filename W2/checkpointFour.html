@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20/10/17</title>
+</head>
+<body>
+	
+	<h1>Fruits</h1>
+	
+	<ul>
+		<li id='banana' class='fruit'>Banana</li>
+		<li id='mango' class='fruit'>Mango</li>
+		<li id='apple' class='fruit'>Apple</li>
+		<li id='potato' class='notFruit'>Potato</li>
+		<li id='grapes' class='fruit'>Grapes</li>
+	</ul>
+
+<script>
+	
+	(function(){ //iife start
+
+		// this function changes the css of the element with the ID of mango.
+		function a(){
+			var juice = document.getElementById('mango');
+			juice.style.color = 'green';
+			juice.style.fontSize = '5em';
+			juice.style.marginLeft = '100px';
+			console.log(juice);
+		}
+
+		// this function changes the css of the element with the class of notFruit.
+		// the 
+		function b(){
+			var juice = document.getElementsByClassName('notFruit');
+			juice[0].style.fontSize = '3em';
+			juice[0].style.textTransform = 'uppercase';
+			juice[0].style.fontFamily = 'papyrus';
+			juice[0].style.backgroundColor = 'black';
+			juice[0].style.color = 'white';
+			console.log(juice);
+		}
+
+		function c(){
+			var juice = document.getElementsByTagName('li');
+			juice[0].style.color = 'pink';
+			
+			console.log(juice);
+		}
+
+		a();
+		b();
+		c();
+
+	})(); //iife end
+
+</script>
+
+</body>
+</html>

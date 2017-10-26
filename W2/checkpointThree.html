@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkpoint 19/10/17</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		body {
+			height: 1000px;
+		}
+
+		.container {
+			margin: 0 auto;
+			margin-top: 50px;
+		}
+
+		.col-md-6 {
+			height: 300px;
+		}
+
+		.row {
+			text-align: center;
+		}
+
+		p {
+			padding-top: 120px;
+			font-size: 3em;
+			color: white;
+		}
+
+		.box1 {
+			background-color: lightblue;
+		}
+
+		.box2 {
+			background-color: ;
+		}
+
+		.box3 {
+			background-color: black;
+		}
+
+		.box4 {
+			background-color: pink;
+		}
+
+		.scroll {
+			color: grey;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+	  
+	  <div class="row">
+	    <div class="col-md-6 box1"><p>CLICK</p></div>
+	    <div class="col-md-6 box2"><p class='scroll'>SCROLL</p></div>
+	  </div>
+	 
+	  <div class="row">
+	    <div class="col-md-6 box3"><p>DOUBLE CLICK</p></div>
+	    <div class="col-md-6 box4"><p>NONE</p></div>
+	  </div>
+
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+		
+		$(document).ready(function(){
+			$('.box1').click(function(){
+				$('.box1').hide(2000).show(2000)
+			});
+
+			$(window).scroll(function(){
+				$('.box2').css('background-color', 'grey')
+				$('.scroll').css('color', 'white')
+			});
+
+			$('.box3').dblclick(function(){
+				$('.box3').fadeOut(2000).fadeIn(2000)
+			});
+		});
+		
+	</script>
+</body>
+</html>

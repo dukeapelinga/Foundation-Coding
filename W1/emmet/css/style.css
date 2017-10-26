@@ -1,0 +1,38 @@
+body {
+	height: 1000px;
+}
+
+.container {
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.col-md-6 {
+	height: 300px;
+}
+
+.row {
+	text-align: center;
+}
+
+p {
+	padding-top: 120px;
+	font-size: 3em;
+	color: white;
+}
+
+.box1 {
+	background-color: lightblue;
+}
+
+.box2 {
+	background-color: grey;
+}
+
+.box3 {
+	background-color: black;
+}
+
+.box4 {
+	background-color: pink;
+}

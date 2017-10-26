@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+	
+	<h1>guess game</h1>
+
+	<p>how many mango can i consume in one day?</p>
+	<p>guess away</p>
+
+	<input id="myInput" type="text">
+
+	<button id='submit' onclick="myFunction()">submit</button>
+
+	<p id='popUp'></p>
+
+<script>
+
+	(function(){
+
+		function myFunction(myInput){
+		
+			var fruits = document.getElementById('myInput').value;
+
+
+			if (myInput == 5) {
+				console.log(myInput);
+				fruits = 'ding ding ding';
+			} else if(myInput < 5) {
+				fruits = 'try a higher number';
+			} else if(myInput > 5) {
+				fruits = 'try a lower number';
+			} 
+
+			return fruits;
+		}	
+		
+		document.getElementById('submit').onclick = function(){
+			var fruits = document.getElementById('myInput').value;
+			document.getElementById('popUp').innerHTML = myFunction(fruits);
+		}
+
+	})();
+
+</script>
+
+</body>
+</html>

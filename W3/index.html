@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loops</title>
+</head>
+<body>
+	
+	<p id='answer'></p>
+
+<script>
+	
+	<!-- FOR LOOPS -->
+
+	// for (var i = 0; i < 10; i++) {
+	// 	document.write(i);
+	// 	console.log(i);
+	// }
+
+	var scores = [24, 32, 17];
+	var arrayLength = scores.length;
+	var roundNumber = 0;
+	var msg = '';
+
+	for (var i = 0; i < arrayLength; i++) {
+		roundNumber = (i + 1);
+
+		msg += 'Round' + roundNumber + ': ';
+
+		msg += scores[i] + '<br />';
+
+		console.log(i + 'a')
+	}
+
+	// document.getElementById('answer').innerHTML = msg;
+
+	<!-- WHILE LOOPS -->
+
+	var i = 2;       // Set counter to 1
+	var msg = '';    // Message
+
+	// Store 5 times table in a variable
+	while (i < 10) {
+	  msg += i + ' x 5 = ' + (i * 5) + '<br />';
+	  i++;
+	}
+
+	// document.getElementById('answer').innerHTML = msg;
+
+	<!-- DO WHILE LOOP -->
+
+	var i = 1;       // Set counter to 1
+	var msg = '';    // Message
+
+	// Store 5 times table in a variable
+	do {
+	  msg += i + ' x 5 = ' + (i * 5) + '<br />';
+	  i++;
+	} while (i < 1); 
+	// Note how this is already 1 and it still runs
+
+	document.getElementById('answer').innerHTML = msg;
+
+</script>
+
+</body>
+</html>
