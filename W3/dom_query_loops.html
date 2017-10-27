@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkpoint 26/10/17</title>
+</head>
+<body>
+
+	<h1 id='head'>DOM Query + Loop</h1>
+
+	<h2 class='flop'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius modi doloremque exercitationem est error nulla corrupti. Quas unde ea natus culpa, enim consequuntur doloremque distinctio eveniet quis fugiat. Architecto, quod.</h2>
+
+	<p id='lorem' class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia optio sint exercitationem veniam, odit praesentium quidem amet tempora minima iusto! Earum praesentium facilis aliquid, dolor quas sint perspiciatis quidem exercitationem.</p>
+	
+	<p id='lorem2' class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis, eius, blanditiis ea saepe consequatur sint aliquid facilis laboriosam repudiandae consectetur, libero beatae quis minima impedit ut aspernatur animi! Harum.</p>
+	
+	<p id='lorem3' class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis officia quam, dolor, dolorem, distinctio quisquam similique ducimus repellat minus laudantium obcaecati hic! Impedit inventore magni, numquam, aut optio obcaecati vero.</p>
+	
+<script>
+	
+	// method to target IDs 
+	var all = document.getElementById('head');
+	
+	console.log('a'); //flag - use to debug when functions are not working
+	console.dir(all);
+	
+	// this method works best specifically when targeting ID
+	for (var i = 0; i < 1; i++){
+		
+		console.log('b');
+		
+		// 
+		all.style.color = 'lightblue';
+		all.style.fontSize = '3em';
+		all.style.fontFamily = 'helvetica';		
+	}
+
+	// method to target tag names: p, h1, h2, etc.
+	var all = document.getElementsByTagName('p');
+		
+	// this method includes .length because there is usually more than one element when you are targeting tag names.
+	for (var i = 0; i < all.length; i++){
+		
+		// dont forget [i] or array if you want to target a specific tag - [0][1][2]	
+		all[i].style.color = 'pink';
+		all[0].style.fontSize = '40px';
+		all[1].style.fontFamily = 'helvetica';
+		all[2].style.backgroundColor = 'black';
+	}
+
+	// method to target class names
+	var all = document.getElementsByClassName('flop');
+
+	for (var i = 0; i < all.length; i++) {
+
+		all[i].style.color = 'white';
+		all[i].style.fontSize = '40px';
+		all[i].style.fontFamily = 'helvetica';
+		all[i].style.backgroundColor = 'black';
+	}
+	
+</script>
+
+
+</body>
+</html>
