@@ -1,0 +1,33 @@
+h1 {
+	color: green;
+}
+.box {
+	width: 200px;
+	height: 200px;
+}
+#box1 {
+	background-color: blue;
+}
+#box2 {
+	background-color: green;
+}
+#box3 {
+	background-color: red;
+}
+.boxrandom {
+	margin-top: 10px;
+	background-color: pink;
+}
+.silver {
+	background-color: silver;
+}
+.pumpkin {
+	background-color: orange;
+}
+#box5 {
+	background-color: purple;
+}
+.border {
+	border: 3px solid black;
+	box-sizing: border-box;
+}

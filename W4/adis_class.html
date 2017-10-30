@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="icheck/skins/polaris/polaris.css" rel="stylesheet">
+	<style>
+		
+		#wrapper {
+			width: 200px;
+			height: 200px;
+			background-color: grey;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id='wrapper'>
+		<div id='multiple_choice_one'>
+		
+			<input type="checkbox">
+			<label>Tick 1</label>
+
+			<input type="checkbox" checked>
+			<label>Tick 2</label>
+
+		</div>
+
+		<div id='multiple_choice_two'>
+			
+			<input type="radio" name="iCheck">
+			<label>Option 1</label>
+
+			<input type="radio" name="iCheck" checked>
+			<label>option 2</label>
+
+		</div>
+	</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<script src="icheck/icheck.js"></script>	
+
+<script>
+
+	$(document).ready(function(){
+	  $('input').iCheck({
+	    checkboxClass: 'icheckbox_polaris',
+	    radioClass: 'iradio_polaris',
+	    increaseArea: '-10%' // optional
+	  });
+	});
+
+</script>
+
+
+</body>
+</html>
