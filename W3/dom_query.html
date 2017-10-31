@@ -16,13 +16,27 @@
 	<p class='end'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint natus cupiditate ipsam possimus. Velit similique ea laborum facilis dolorem esse vel quasi eius mollitia optio. Repellendus amet et nemo vel!</p>
 <script>
 	
-	(function(){
+	(function(){ //iife starts
 
 		setTimeout(function(){ 
-				alert("Hello"); 
+			var all = document.getElementById('head');
+
+				console.log('a'); //flag - use to debug when functions are not working
+				console.dir(all);
+				
+				// this method works best specifically when targeting ID
+				for (var i = 0; i < 1; i++){
+					
+					console.log('b');
+					
+					// 
+					all.style.color = 'lightblue';
+					all.style.fontSize = '3em';
+					all.style.fontFamily = 'helvetica';		
+				}
 			}, 3000);
 		
-	})();
+	})(); //iife starts
 	
 
 </script>
