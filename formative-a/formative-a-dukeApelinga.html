@@ -12,6 +12,7 @@
 
 		for(var iCount=0; iCount<aNums.length; iCount++) {
 			if(iMax <= aNums[iCount]) {
+// ***  Duke 02/11 changed the > into <= 	
 				iMax = aNums[iCount];
 			}
 		}
@@ -44,19 +45,23 @@
 	var aAverageGrades = [];
 
 	for(var iCount=0; iCount<iSize; iCount++) {
-		var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / 3;
+		var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / 3; 
+// *** Duke 02/11 changed / aGradesPhysics.length into / 3 to divide all three subjects and not just grades from Physics.
 		aAverageGrades.push(fAverage);
 	}
 	
 	var iTopGrade = findMax(aAverageGrades);
+// *** Duke 02/11 changed findMaxs into findMax so it can be defined
 
 	//output: list result for each student and top grade
 
+// *** Duke 02/11 changed iCount=1 into iCount=0 so the first student shows up in DOM
 	for(var iCount=0; iCount<aAverageGrades.length; iCount++) {
 		if(aAverageGrades[iCount] < 50) {
 
 			document.write('Student '+(iCount+1)+': Fail'+'<br>');
 
+// *** Duke 02/11 changed > 50 into >= 50 to indicate that 50 is minimum/avarage grade to pass
 		} else if(aAverageGrades[iCount] >= 50 && aAverageGrades[iCount] < 80) {
 
 			document.write('Student '+(iCount+1)+': Pass'+'<br>');
@@ -64,10 +69,11 @@
 		} else {
 			
 			document.write('Student '+(iCount+1)+': Pass with Distinction'+'<br>');
+// *** Duke 02/11 added + between (iCount+1) and ': Pass with Distinction' to solve the error
 		}
 	}
 
-	document.write('<h1>The top overall grade is '+iTopGrade+'</h1>');
+	document.write('<h1>The top average overall grade is '+iTopGrade+'</h1>');
 
 	</script>
 	
