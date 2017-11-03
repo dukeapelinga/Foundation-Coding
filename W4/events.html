@@ -29,6 +29,38 @@
 	
 	(function(){
 
+
+ 		// var allIds = ['gavin', ];
+
+ 		function readTime(idString){
+ 			for (var i = idString.length - 1; i >= 0; i--) {
+
+ 				var a = document.getElementById(idString[i]);
+
+ 				function myFunction(){
+ 						
+ 					a.style.filter = 'none';
+ 				 	a.style.transition = '1000ms';
+
+ 				}
+ 				
+ 				a.onmouseover = myFunction; 
+
+ 				function myFunctionTwo(){
+
+ 					a.style.filter = 'grayscale(100%)';
+ 				 	a.style.transition = '1000ms';
+
+ 				}
+
+ 				a.onmouseout = myFunctionTwo; 
+ 			};
+
+ 		} //function ENDS
+
+ 		readTime(allIds);
+
+
 		var a = document.getElementById('gavin')
 
 		function myFunction(){
@@ -48,6 +80,30 @@
 		}
 
 		a.onmouseout = myFunctionTwo; 
+
+
+
+
+
+		var b = document.getElementById('gavin1')
+
+		function myFunctionb(){
+				
+			b.style.filter = 'none';
+		 	b.style.transition = '1000ms';
+
+		}
+		
+		b.onmouseover = myFunctionb; 
+
+		function myFunctionTwob(){
+
+			b.style.filter = 'grayscale(100%)';
+		 	b.style.transition = '1000ms';
+
+		}
+
+		b.onmouseout = myFunctionTwob; 
 
 		
 		
@@ -74,29 +130,11 @@
 
 	})();
 
-	(function(){
+	// (function(){
 
-		var a = document.getElementById('gavin1')
 
-		function myFunction(){
-				
-			a.style.filter = 'none';
-		 	a.style.transition = '1000ms';
 
-		}
-		
-		a.onmouseover = myFunction; 
-
-		function myFunctionTwo(){
-
-			a.style.filter = 'grayscale(100%)';
-		 	a.style.transition = '1000ms';
-
-		}
-
-		a.onmouseout = myFunctionTwo; 
-
-	})();
+	// })();
 
 </script>	
 
