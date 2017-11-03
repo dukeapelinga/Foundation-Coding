@@ -11,37 +11,92 @@
 			background-color: grey;
 			margin: 0 auto;
 		}
+
+		.meme {
+			filter: grayscale(100%);
+		}
+
 	</style>
 </head>
 <body>
 	
-	<div id='box'></div>
+	<!-- <div id='box'></div> -->
+
+	<img id='gavin' class='meme' src="img/gavin.jpg" alt="">
+	<img id='gavin1' class='meme' src="img/gavin.jpg" alt="">
 
 <script>
 	
 	(function(){
 
-		var el = document.getElementById('box');
+		var a = document.getElementById('gavin')
 
-			function a(){
+		function myFunction(){
 				
-				el.style.transition = '1000ms';
-				el.style.backgroundColor = 'pink';
+			a.style.filter = 'none';
+		 	a.style.transition = '1000ms';
 
-			}
+		}
+		
+		a.onmouseover = myFunction; 
 
-			el.onmouseover = a; 
+		function myFunctionTwo(){
 
-			function b(){
+			a.style.filter = 'grayscale(100%)';
+		 	a.style.transition = '1000ms';
+
+		}
+
+		a.onmouseout = myFunctionTwo; 
+
+		
+		
+		
+
+		// var el = document.getElementById('box');
+
+		// 	function a(){
 				
-				el.style.transition = '1000ms';
-				el.style.backgroundColor = 'lightblue';
-			}
+		// 		el.style.transition = '1000ms';
+		// 		el.style.backgroundColor = 'pink';
+
+		// 	}
+
+		// 	el.onmouseover = a; 
+
+		// 	function b(){
+				
+		// 		el.style.transition = '1000ms';
+		// 		el.style.backgroundColor = 'lightblue';
+		// 	}
 			
-			el.onmouseout = b;
+		// 	el.onmouseout = b;
 
 	})();
-	
+
+	(function(){
+
+		var a = document.getElementById('gavin1')
+
+		function myFunction(){
+				
+			a.style.filter = 'none';
+		 	a.style.transition = '1000ms';
+
+		}
+		
+		a.onmouseover = myFunction; 
+
+		function myFunctionTwo(){
+
+			a.style.filter = 'grayscale(100%)';
+		 	a.style.transition = '1000ms';
+
+		}
+
+		a.onmouseout = myFunctionTwo; 
+
+	})();
 
 </script>	
 
