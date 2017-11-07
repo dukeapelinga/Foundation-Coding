@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<style>
 		
 		#wrapper {
@@ -10,12 +11,12 @@
 		}
 
 		#spin {
-			margin: 20px auto;
+			margin: 50px auto;
 			width: 200px;
 			height: 200px;
 			border: 20px solid #f3f3f3;
 			border-radius: 50%;
-			border-top: 20px solid pink;
+			border-top: 20px solid lightblue;
 
 			-webkit-transition: all 5.0s ease-in-out;
 			-moz-transition: all 5.0s ease-in-out;
@@ -65,47 +66,62 @@
 	<div id='wrapper'>
 		
 		<div id='spin'></div>
-		<button id='click' class='buttons'>1</button>
-		<button id='click2' class='buttons'>2</button>
-		<button id='click3' class='buttons'>3</button>
-		<button id='click4' class='buttons'>4</button>
-		<button id='click5' class='buttons'>5</button>
+		<button id='click' class='btn btn-primary btn-md'>one</button>
+		<button id='click2' class='btn btn-primary btn-md'>two</button>
+		<button id='click3' class='btn btn-primary btn-md'>three</button>
+		<button id='click4' class='btn btn-primary btn-md'>four</button>
+		<button id='click5' class='btn btn-primary btn-md'>five</button>
 
 	</div>
 	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	
+	
 	<script>
 
 		$(document).ready(function(){
+			
 			$('#click').click(function(){
 				$('#spin').toggleClass('rotated');
-			});
-		});
 
-		$(document).ready(function(){
+				setTimeout(function(){
+					window.location.reload();
+				}, 5000);
+			});
+
 			$('#click2').click(function(){
 				$('#spin').toggleClass('rotated2');
-			});
-		});
 
-		$(document).ready(function(){
+				setTimeout(function(){
+					window.location.reload();
+				}, 5000);
+			});
+
 			$('#click3').click(function(){
 				$('#spin').toggleClass('rotated3');
-			});
-		});
 
-		$(document).ready(function(){
+				setTimeout(function(){
+					window.location.reload();
+				}, 5000);
+			});
+
 			$('#click4').click(function(){
 				$('#spin').toggleClass('rotated4');
-			});
-		});
 
-		$(document).ready(function(){
+				setTimeout(function(){
+					window.location.reload();
+				}, 5000);
+			});
+
 			$('#click5').click(function(){
 				$('#spin').toggleClass('rotated5');
+
+				setTimeout(function(){
+					window.location.reload();
+				}, 5000);
 			});
+		
 		});
 
 		console.dir(spin);
