@@ -131,7 +131,7 @@
 
 /*--------------border-----------------*/
 
-.noneBorder:after{
+.noBorder:after{
     border: none; 
 }
 
