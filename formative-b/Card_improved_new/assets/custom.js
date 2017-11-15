@@ -92,7 +92,7 @@
         var addMessage = message.value;
 
         if (addMessage === "" && addMessage) {
-            // If the message is empty do not anything
+            // If the message is empty do nothing
         } else if (addMessage !== "" && addMessage) {
             // If the message is filled do this
             card.children[1].children[0].textContent = addMessage;

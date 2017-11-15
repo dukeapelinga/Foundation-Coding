@@ -1,0 +1,12 @@
+Card Improvement Pseudocode Process Plan:
+
+1) Explore the HTML and CSS, to see what works and what is suppose to happen.
+2) Identify what needs to happen a what are the problems.
+3) Seperate the problems in steps.
+
+Problem 1: What is the make card button doing?
+Problem 2: Need to have Specify your message content written inside card. (dom query?) Need to grab user's input value. Switch statements?
+Problem 3: Need to change card image depending on user selection. Change the img scr depending on user selection.
+Problem 4: Need to change background colour. Change classname depending on user selection by finding out from the css. 
+Problem 5: Need to change font type. Change classname depending on user selection by finding out from the css.
+Problem 6: Need to change border thickness. Change classname depending on user selection by finding out from the css.
