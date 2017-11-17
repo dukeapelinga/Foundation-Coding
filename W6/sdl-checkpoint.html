@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="showData">
+		<!-- <table>
+			<tr>
+			    <th>Name</th>
+			    <th>City</th>
+			    <th>Username</th>
+		 	</tr>
+		</table> -->
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script>
+		var items = [];
+
+		var showData = $('#showData');
+
+		$.getJSON( "https://jsonplaceholder.typicode.com/users", 
+			function( data ) {
+				console.log(data);
+				for (var i = 0; i < data.length; i++) {
+					items.push(data[i].name);
+			};
+		 }).done(function() {
+			populateHTML();
+  		 });
+
+  		function populateHTML(){
+  			if (items.length) {
+				var content = '<li>' + items.join('</li><li>') + '</li>';
+				var list = $('<ul />').html(content);
+				showData.append(list);
+  			}
+  		}
+
+		console.log(items);
+
+	</script>
+	
+</body>
+</html>

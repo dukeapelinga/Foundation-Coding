@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array Methods</title>
+</head>
+<body>
+	
+	<button onclick="myFunctionD()">click</button>
+	<button onclick="myFunctionE()">press</button>
+
+	<p id="demo"></p>
+	<p id="demoTwo"></p>
+
+	<script>
+
+		// map()
+		
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		var amount = [10, 20, 30, 5, 15, 45];
+
+		// filter() method 
+		function myFunctionC(amounts) {
+		    return amounts >= 18;
+		}
+
+		function myFunctionD(){
+			document.getElementById("demo").innerHTML = amount.filter(myFunctionC);
+		}
+
+		// console.log(myFunctionD(amount));
+
+		// ---------------------------------------------------
+
+		// map() method
+		function myFunctionE(){
+			x = document.getElementById("demoTwo")
+			x.innerHTML = amount.map(Math.sqrt);
+		}
+		
+		// -----------------------------------------------------
+
+		// Array Methods
+		function myFunction(){
+			
+			// add string to the end of the array
+			fruits.push("kiwi");
+
+			// remove the last string from the array
+			fruits.pop();
+
+			// reverse the order of the array
+			fruits.reverse();
+
+			// remove the first string in the array
+			fruits.shift();
+
+			// add string to the beginning of the array
+			fruits.unshift("Lemon", "Potato");
+
+			// sort array alphabetically
+			fruits.sort();
+			// sort array numerically 
+			amount.sort(function(a, b){return a-b});
+
+
+		}
+
+		// -------------------------------------------------------
+
+		// split method
+		function myFunctionB(){
+			
+			// method to split the string word per word in a sentence
+			// "" without space inside the "" splits the string letter by letter
+			// " " with space inside "" splits the string word by word
+			var str = "what fruit would you like to eat?";
+			var res = str.split(" ");
+
+			console.log(res);
+		}
+
+
+
+		myFunction();
+		myFunctionB();
+		console.log(fruits);
+		console.log(amount);
+
+	</script>
+</body>
+</html>
