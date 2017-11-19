@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON and Sorting Data: Task B</title>
+    <style>
+        #list1, #list2, #list3 {
+            display: none;
+        }
+
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(22, 22, 22, 0.7);
+            opacity: 0;
+            display: none;
+        }
+
+        #loading img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button class="show-list-button">Show JSON Names</button>
+    <button class="show-list-button">Show JSON Emails</button>
+    <button class="show-list-button">Show JSON Phone Number</button>
+
+    <ul id="list1"></ul>
+    <ul id="list2"></ul>
+    <ul id="list3"></ul>
+
+    <div id="loading">
+        <img src="assets/load.gif" alt="" srcset="">
+    </div>
+
+    <script>
+        (function() {
+            // 1.***
+
+            // 1. Create 3 seperate lists that can be switched via ui switch button without a page reload
+            // 2. Each list should represent some data from the json place holder api ( The data and url for each list is your choice)
+            // 3. The switch between each list should re-call/access the json api/server each time (update data)
+
+            // 2.***
+            // 1. For each list provide a button which re-orders the list by either alpha or numeric order. 
+            // 2. Buttons such as 'a-z' and 'ascending - descending' should be in play.
+
+            // **Make all ui transitions and data updates smooth and visually pleasing  
+
+            // Variable Declarations
+            var list1 = document.getElementById("list1"),
+                list2 = document.getElementById("list2"),
+                list3 = document.getElementById("list3"),
+                loading = document.getElementById("loading"),
+                showListButtons = document.getElementsByClassName("show-list-button"),
+                
+                // Custom UI object
+                ui = {
+                    hide: (el) => {
+                        el.style.display = "none";
+                    },
+                    show: (el, disp) => {
+                        if (typeof disp === "undefined") disp = "block";
+                        el.style.display = disp;
+                    },
+                    animateOn: (el, speed) => {
+                        if (typeof speed === "undefined") speed = 0;
+                        el.style.transition = speed + "ms";
+                        el.style.opacity = 0.0;
+                        ui.show(el);
+                        setTimeout(() => {
+                            el.style.opacity = 1.0;
+                        }, 10);
+                    },
+                    animateOff: (el, speed) => {
+                        if (typeof speed === "undefined") speed = 0;
+                        el.style.transition = speed + "ms";
+                        el.style.opacity = 0.0;
+                        setTimeout(() => {
+                            ui.hide(el);
+                        }, speed);
+                    }
+                },
+                // JSON URL
+                url = "https://jsonplaceholder.typicode.com/users";
+
+            // Event listeners for each button
+            showListButtons[0].addEventListener("click", () => {
+                ui.show(list1);
+                ui.hide(list2);
+                ui.hide(list3);
+
+                getJSON(url, list1, "name");
+            });
+
+            showListButtons[1].addEventListener("click", () => {
+                ui.hide(list1);
+                ui.show(list2);
+                ui.hide(list3);
+
+                getJSON(url, list2, "email");
+            });
+
+            showListButtons[2].addEventListener("click", () => {
+                ui.hide(list1);
+                ui.hide(list2);
+                ui.show(list3);
+
+                getJSON(url, list3, "phone");
+            });
+
+            // AJAX Request function
+            function getJSON(url, list, prop) {
+                // Define a new request
+                var xhr = new XMLHttpRequest;
+
+                // Check whether the list has any children and empty the list if it does
+                if (list.children) {
+                    list.innerHTML = ""; // Empty the UL
+                }
+
+                // Animate the loading element on
+                ui.animateOn(loading, 300);
+
+                // JSON State change function
+                xhr.onreadystatechange = () => {
+
+                    // When the request is ready, run the if block
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+
+                        // Parse the JSON's responseText
+                        var json = JSON.parse(xhr.responseText);
+
+                        // Fake loading time
+                        setTimeout(() => {
+                            jsonPubliciser(json, list, prop);
+
+                            // Animate the loading element off the page
+                            ui.animateOff(loading, 300);
+                        }, 1000);
+                    }
+                }
+
+                // Open and send the AJAX request
+                xhr.open("GET", url);
+                xhr.send();
+            }
+
+            // Uses the AJAX JSON response
+            function jsonPubliciser(jsonObj, list, prop) {
+                // Loop through the JSON Object
+                for (i = 0; i < jsonObj.length; i++) {
+                    // Append the jsonObj id prop and custom prop to the list prop
+                    list.innerHTML += "<li>" + jsonObj[i].id + "). " + jsonObj[i][prop] + "</li>";
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

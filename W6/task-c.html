@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// Create one function that takes theArray as an argument then completes steps
+	// 1 - 2 - 3 and returns the result/processed array
+
+	var theArray = [false, 'adam', 'sam', 15, 'bob', 'john', 9000, 'tupac', 'biggie', 'george', 'tony', 22];
+
+	// 1. Clean array so only string values remain
+	// 2. Add one item 'billy' to the end of the array
+	// 3. Sort alphabetically in descending order
+
+	// *** Extra for the courageous:
+	// Have the same function Punctuate the first letter of each name.
+
+	var stringArrayA = sortArray(theArray, true);
+
+	function sortArray(array, punc) {
+                var stringArrayB = [];
+
+                // go to
+                // ------ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof ----- 
+                // to learn what "typeof" function/method does:
+                for (i = 0; i < array.length; i++) {
+                    if (typeof array[i] === "string") {
+                        stringArrayB.push(array[i]);
+                    }
+                }
+
+                stringArrayB.push("billy");
+
+                stringArrayB.sort();
+
+                if (punc === true) {
+                    // Capitalizes the first letter of each item in the array
+                    for (a = 0; a < stringArrayB.length; a++) {
+                        stringArrayB[a] = stringArrayB[a].charAt(0).toUpperCase() + stringArrayB[a].slice(1);
+                        // The charAt() method returns the character at the specified index in a string.
+                        // The slice() method returns the selected elements in an array, as a new array object.
+                    }
+                }
+                
+                return stringArrayB;
+            }
+        
+    console.log(stringArrayA);
+</script>
+</body>
+</html>
